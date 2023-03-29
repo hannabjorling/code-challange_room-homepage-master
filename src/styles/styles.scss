@@ -1,0 +1,51 @@
+/* PRIMARY COLORS */
+$clr-dark-grey: hsl(0, 0%, 63%);
+$clr-black: hsl(0, 0%, 0%);
+$clr-white: hsl(0, 0%, 0%);
+$clr-very-dark-grey: hsl(0, 0%, 27%);
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap');
+$ff-body: 'League Spartan', sans-serif;
+
+/* FONT WEIGHTS */
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+/* BOOTSTRAP */
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+  font-size: 12px;
+  font-family: $ff-body;
+  margin: 0;
+
+  main {
+    .carousel-section {}
+
+    .about-our-furniture {
+
+      .row>.col-12:first-of-type {
+        background-image: url('../../public/images/image-about-dark.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 200px;
+      }
+
+      .about-text {
+        height: 30vh;
+
+        +.col-12 {
+          background-image: url('../../public/images/image-about-light.jpg');
+          background-size: cover;
+          background-position: center;
+          min-height: 200px;
+        }
+      }
+    }
+  }
+}
+
+/* MEDIA QUERIES - DESKTOP */
+@media screen and (min-width: 1440px) {}
