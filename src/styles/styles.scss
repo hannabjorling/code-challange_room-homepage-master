@@ -1,7 +1,7 @@
 /* PRIMARY COLORS */
 $clr-dark-grey: hsl(0, 0%, 63%);
 $clr-black: hsl(0, 0%, 0%);
-$clr-white: hsl(0, 0%, 0%);
+$clr-white: hsl(0, 0%, 100%);
 $clr-very-dark-grey: hsl(0, 0%, 27%);
 
 /* FONTS */
@@ -16,16 +16,140 @@ $fw-bold: 700;
 /* BOOTSTRAP */
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+.flex {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.hidden-overflow {
+  overflow: hidden;
+}
+
 body {
   font-size: 12px;
   font-family: $ff-body;
   margin: 0;
 
   main {
-    .carousel-section {}
+    .carousel-section {
+      .menu {
+        .menu-open {
+          position: absolute;
+          width: 100%;
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 40px 20px;
+          margin: 0;
+          z-index: 10;
+          background-color: $clr-white;
+          top: 0;
+
+          li {
+            list-style: none;
+
+            .close {
+              display: inline-block;
+              width: 40px;
+            }
+
+            a {
+              font-size: 18px;
+              text-decoration: none;
+              color: $clr-black;
+              font-weight: $fw-semibold;
+            }
+          }
+        }
+
+        .body-opacity {
+          position: absolute;
+          width: 100vw;
+          height: 100%;
+          background-color: $clr-black;
+          opacity: 50%;
+          z-index: 1;
+        }
+
+        .menu-closed {
+          position: absolute;
+          top: 40px;
+          z-index: 1;
+
+          li {
+            list-style: none;
+
+            .open {
+              display: inline-block;
+              width: 130px;
+            }
+          }
+
+          .desktop-list-item {
+            display: none;
+          }
+        }
+      }
+
+      .carousel-item {
+        .carousel-img {
+          background-image: url('../../public/images/mobile-image-hero-1.jpg');
+          background-size: cover;
+          background-position: center;
+          height: 360px;
+        }
+
+        .carousel-item-text {
+          padding-left: 0px;
+          padding: 50px 40px;
+
+          h1 {
+            font-weight: $fw-semibold;
+            font-size: 2.3rem;
+          }
+
+          p {
+            font-size: 15px;
+            color: $clr-dark-grey;
+          }
+
+          a {
+            display: block;
+            text-decoration: none;
+            color: $clr-black;
+            text-transform: uppercase;
+            letter-spacing: 12px;
+            font-size: 14px;
+            margin-top: 40px;
+            font-weight: $fw-semibold;
+          }
+
+          .carousel-controls {
+            position: absolute;
+            top: 308px;
+            right: 0;
+            background-color: $clr-black;
+
+            .carouselPrevControl,
+            .carouselNextControl {
+              background-color: $clr-black;
+              border: none;
+              padding: 16px;
+
+              .bi {
+                width: 20px;
+                height: 20px;
+                color: $clr-white;
+              }
+            }
+          }
+        }
+      }
+    }
 
     .about-our-furniture {
-
       .row>.col-12:first-of-type {
         background-image: url('../../public/images/image-about-dark.jpg');
         background-size: cover;
@@ -34,7 +158,20 @@ body {
       }
 
       .about-text {
-        height: 30vh;
+        min-height: 200px;
+        padding: 50px 40px;
+
+        h2 {
+          font-size: 15px;
+          text-transform: uppercase;
+          letter-spacing: 5px;
+          font-weight: $fw-bold;
+        }
+
+        p {
+          color: $clr-dark-grey;
+          font-size: 15px;
+        }
 
         +.col-12 {
           background-image: url('../../public/images/image-about-light.jpg');
@@ -47,5 +184,306 @@ body {
   }
 }
 
+/* ANIMATION MENU */
+@keyframes slidein {
+  from {
+    top: -100%;
+  }
+
+  to {
+    top: 0%;
+  }
+}
+
+@keyframes slideleft {
+  from {
+    left: -100%;
+  }
+
+  to {
+    left: 0%;
+  }
+}
+
+@keyframes textshow3s {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+@keyframes textshow6s {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
+
+.slideleft {
+  animation-duration: 2s;
+  animation-name: slideleft;
+}
+
+.slideIn {
+  animation-duration: 0.6s;
+  animation-name: slidein;
+}
+
+.textShow3s {
+  animation-duration: 3s;
+  animation-name: textshow3s;
+}
+
+.textShow6s {
+  animation-duration: 6s;
+  animation-name: textshow6s;
+}
+
+@media screen and (min-width: 990px) {
+  body {
+    main {
+      .carousel-section {
+        .menu {
+          .menu-closed {
+            padding-left: 10px;
+            width: 33%;
+            justify-content: space-between;
+
+            li {
+              .open {
+                display: none;
+              }
+
+              .logo {
+                display: inline-block;
+                width: 100px;
+              }
+
+              a {
+                font-size: 18px;
+                text-decoration: none;
+                color: $clr-white;
+              }
+            }
+
+            .desktop-list-item {
+              display: inline;
+
+              a:after {
+                content: "";
+                position: relative;
+                width: 0%;
+                display: block;
+                height: 2px;
+                transition: all 0.6s ease;
+                bottom: 10%;
+              }
+
+              a:hover::after {
+                position: relative;
+                width: 100%;
+                height: 2px;
+                background-color: white;
+              }
+            }
+          }
+        }
+
+        .carousel-item {
+          .carousel-img {
+            background-image: url('../../public/images/desktop-image-hero-1.jpg');
+            height: 400px;
+          }
+
+          .carousel-item-text {
+            padding: unset;
+
+            h1,
+            p,
+            a {
+              padding: 0 40px;
+            }
+
+            a {
+              transition: 0.6s ease;
+            }
+
+            a:hover {
+              letter-spacing: 20px;
+              color: $clr-dark-grey;
+            }
+
+            h1 {
+              padding-top: 20px;
+              font-size: 1.9rem;
+            }
+
+            .carousel-controls {
+              top: unset;
+              right: unset;
+              bottom: 0;
+
+              .carouselPrevControl,
+              .carouselNextControl {
+                transition: 0.3s ease;
+
+                .bi {
+                  width: 25px;
+                  height: 25px;
+                }
+              }
+
+              .carouselPrevControl:hover,
+              .carouselNextControl:hover {
+                background-color: $clr-dark-grey;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 /* MEDIA QUERIES - DESKTOP */
-@media screen and (min-width: 1440px) {}
+@media screen and (min-width: 1440px) {
+  body {
+    main {
+      .carousel-section {
+        .menu {
+          .menu-closed {
+
+            li {
+              a {
+                font-size: 24px;
+              }
+            }
+          }
+        }
+
+        .carousel-item {
+          .carousel-img {
+            height: 70vh;
+            background-size: cover;
+          }
+
+          .carousel-item-text {
+            align-self: center;
+
+            h1,
+            p,
+            a {
+              padding: 0 110px;
+            }
+
+            h1 {
+              font-size: 2.8rem;
+              line-height: 95%;
+            }
+
+            p,
+            a {
+              font-size: 15px;
+              margin-top: 20px;
+            }
+
+            .carousel-controls {
+
+              .carouselPrevControl,
+              .carouselNextControl {
+                padding: 25px 27px;
+
+                .bi {
+                  width: 30px;
+                  height: 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .about-our-furniture {
+        .row {
+          height: 30vh;
+
+          .col-lg-4:not(.about-text) {
+            width: 30%;
+          }
+
+          .about-text {
+            align-self: center;
+            width: 40%;
+
+            h2 {
+              font-size: 18px;
+            }
+
+            p {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* MEDIA QUERIES - DESKTOP */
+@media screen and (min-width: 1920px) {
+  body {
+    main {
+      .carousel-section {
+        .carousel-item {
+          .carousel-item-text {
+
+            h1,
+            p,
+            a {
+              padding: 0 160px;
+            }
+
+            h1 {
+              font-size: 3.6rem;
+              line-height: 95%;
+            }
+
+            p,
+            a {
+              font-size: 22px;
+              margin-top: 20px;
+            }
+
+            .carousel-controls {
+
+              .carouselPrevControl,
+              .carouselNextControl {
+                padding: 30px 47px;
+              }
+            }
+          }
+        }
+      }
+
+      .about-our-furniture {
+        .row {
+          .about-text {
+            h2 {
+              font-size: 22px;
+            }
+
+            p {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -10774,10 +10774,115 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.flex {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.hidden-overflow {
+  overflow: hidden;
+}
+
 body {
   font-size: 12px;
   font-family: "League Spartan", sans-serif;
   margin: 0;
+}
+body main .carousel-section .menu .menu-open {
+  position: absolute;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40px 20px;
+  margin: 0;
+  z-index: 10;
+  background-color: hsl(0deg, 0%, 100%);
+  top: 0;
+}
+body main .carousel-section .menu .menu-open li {
+  list-style: none;
+}
+body main .carousel-section .menu .menu-open li .close {
+  display: inline-block;
+  width: 40px;
+}
+body main .carousel-section .menu .menu-open li a {
+  font-size: 18px;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 0%);
+  font-weight: 600;
+}
+body main .carousel-section .menu .body-opacity {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  background-color: hsl(0deg, 0%, 0%);
+  opacity: 50%;
+  z-index: 1;
+}
+body main .carousel-section .menu .menu-closed {
+  position: absolute;
+  top: 40px;
+  z-index: 1;
+}
+body main .carousel-section .menu .menu-closed li {
+  list-style: none;
+}
+body main .carousel-section .menu .menu-closed li .open {
+  display: inline-block;
+  width: 130px;
+}
+body main .carousel-section .menu .menu-closed .desktop-list-item {
+  display: none;
+}
+body main .carousel-section .carousel-item .carousel-img {
+  background-image: url("../../public/images/mobile-image-hero-1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 360px;
+}
+body main .carousel-section .carousel-item .carousel-item-text {
+  padding-left: 0px;
+  padding: 50px 40px;
+}
+body main .carousel-section .carousel-item .carousel-item-text h1, body main .carousel-section .carousel-item .carousel-item-text .h1 {
+  font-weight: 600;
+  font-size: 2.3rem;
+}
+body main .carousel-section .carousel-item .carousel-item-text p {
+  font-size: 15px;
+  color: hsl(0deg, 0%, 63%);
+}
+body main .carousel-section .carousel-item .carousel-item-text a {
+  display: block;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 0%);
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  font-size: 14px;
+  margin-top: 40px;
+  font-weight: 600;
+}
+body main .carousel-section .carousel-item .carousel-item-text .carousel-controls {
+  position: absolute;
+  top: 308px;
+  right: 0;
+  background-color: hsl(0deg, 0%, 0%);
+}
+body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselPrevControl,
+body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselNextControl {
+  background-color: hsl(0deg, 0%, 0%);
+  border: none;
+  padding: 16px;
+}
+body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselPrevControl .bi,
+body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselNextControl .bi {
+  width: 20px;
+  height: 20px;
+  color: hsl(0deg, 0%, 100%);
 }
 body main .about-our-furniture .row > .col-12:first-of-type {
   background-image: url("../../public/images/image-about-dark.jpg");
@@ -10786,7 +10891,18 @@ body main .about-our-furniture .row > .col-12:first-of-type {
   min-height: 200px;
 }
 body main .about-our-furniture .about-text {
-  height: 30vh;
+  min-height: 200px;
+  padding: 50px 40px;
+}
+body main .about-our-furniture .about-text h2, body main .about-our-furniture .about-text .h2 {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+body main .about-our-furniture .about-text p {
+  color: hsl(0deg, 0%, 63%);
+  font-size: 15px;
 }
 body main .about-our-furniture .about-text + .col-12 {
   background-image: url("../../public/images/image-about-light.jpg");
@@ -10795,6 +10911,215 @@ body main .about-our-furniture .about-text + .col-12 {
   min-height: 200px;
 }
 
+/* ANIMATION MENU */
+@keyframes slidein {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+@keyframes slideleft {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+@keyframes textshow3s {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes textshow6s {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+.slideleft {
+  animation-duration: 2s;
+  animation-name: slideleft;
+}
+
+.slideIn {
+  animation-duration: 0.6s;
+  animation-name: slidein;
+}
+
+.textShow3s {
+  animation-duration: 3s;
+  animation-name: textshow3s;
+}
+
+.textShow6s {
+  animation-duration: 6s;
+  animation-name: textshow6s;
+}
+
+@media screen and (min-width: 990px) {
+  body main .carousel-section .menu .menu-closed {
+    padding-left: 10px;
+    width: 33%;
+    justify-content: space-between;
+  }
+  body main .carousel-section .menu .menu-closed li .open {
+    display: none;
+  }
+  body main .carousel-section .menu .menu-closed li .logo {
+    display: inline-block;
+    width: 100px;
+  }
+  body main .carousel-section .menu .menu-closed li a {
+    font-size: 18px;
+    text-decoration: none;
+    color: hsl(0deg, 0%, 100%);
+  }
+  body main .carousel-section .menu .menu-closed .desktop-list-item {
+    display: inline;
+  }
+  body main .carousel-section .menu .menu-closed .desktop-list-item a:after {
+    content: "";
+    position: relative;
+    width: 0%;
+    display: block;
+    height: 2px;
+    transition: all 0.6s ease;
+    bottom: 10%;
+  }
+  body main .carousel-section .menu .menu-closed .desktop-list-item a:hover::after {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+  }
+  body main .carousel-section .carousel-item .carousel-img {
+    background-image: url("../../public/images/desktop-image-hero-1.jpg");
+    height: 400px;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text {
+    padding: unset;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text h1, body main .carousel-section .carousel-item .carousel-item-text .h1,
+  body main .carousel-section .carousel-item .carousel-item-text p,
+  body main .carousel-section .carousel-item .carousel-item-text a {
+    padding: 0 40px;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text a {
+    transition: 0.6s ease;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text a:hover {
+    letter-spacing: 20px;
+    color: hsl(0deg, 0%, 63%);
+  }
+  body main .carousel-section .carousel-item .carousel-item-text h1, body main .carousel-section .carousel-item .carousel-item-text .h1 {
+    padding-top: 20px;
+    font-size: 1.9rem;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls {
+    top: unset;
+    right: unset;
+    bottom: 0;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselPrevControl,
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselNextControl {
+    transition: 0.3s ease;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselPrevControl .bi,
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselNextControl .bi {
+    width: 25px;
+    height: 25px;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselPrevControl:hover,
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselNextControl:hover {
+    background-color: hsl(0deg, 0%, 63%);
+  }
+}
 /* MEDIA QUERIES - DESKTOP */
+@media screen and (min-width: 1440px) {
+  body main .carousel-section .menu .menu-closed li a {
+    font-size: 24px;
+  }
+  body main .carousel-section .carousel-item .carousel-img {
+    height: 70vh;
+    background-size: cover;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text {
+    align-self: center;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text h1, body main .carousel-section .carousel-item .carousel-item-text .h1,
+  body main .carousel-section .carousel-item .carousel-item-text p,
+  body main .carousel-section .carousel-item .carousel-item-text a {
+    padding: 0 110px;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text h1, body main .carousel-section .carousel-item .carousel-item-text .h1 {
+    font-size: 2.8rem;
+    line-height: 95%;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text p,
+  body main .carousel-section .carousel-item .carousel-item-text a {
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselPrevControl,
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselNextControl {
+    padding: 25px 27px;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselPrevControl .bi,
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselNextControl .bi {
+    width: 30px;
+    height: 30px;
+  }
+  body main .about-our-furniture .row {
+    height: 30vh;
+  }
+  body main .about-our-furniture .row .col-lg-4:not(.about-text) {
+    width: 30%;
+  }
+  body main .about-our-furniture .row .about-text {
+    align-self: center;
+    width: 40%;
+  }
+  body main .about-our-furniture .row .about-text h2, body main .about-our-furniture .row .about-text .h2 {
+    font-size: 18px;
+  }
+  body main .about-our-furniture .row .about-text p {
+    font-size: 16px;
+  }
+}
+/* MEDIA QUERIES - DESKTOP */
+@media screen and (min-width: 1920px) {
+  body main .carousel-section .carousel-item .carousel-item-text h1, body main .carousel-section .carousel-item .carousel-item-text .h1,
+  body main .carousel-section .carousel-item .carousel-item-text p,
+  body main .carousel-section .carousel-item .carousel-item-text a {
+    padding: 0 160px;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text h1, body main .carousel-section .carousel-item .carousel-item-text .h1 {
+    font-size: 3.6rem;
+    line-height: 95%;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text p,
+  body main .carousel-section .carousel-item .carousel-item-text a {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselPrevControl,
+  body main .carousel-section .carousel-item .carousel-item-text .carousel-controls .carouselNextControl {
+    padding: 30px 47px;
+  }
+  body main .about-our-furniture .row .about-text h2, body main .about-our-furniture .row .about-text .h2 {
+    font-size: 22px;
+  }
+  body main .about-our-furniture .row .about-text p {
+    font-size: 18px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
