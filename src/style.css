@@ -10790,6 +10790,7 @@ body {
   font-size: 12px;
   font-family: "League Spartan", sans-serif;
   margin: 0;
+  overflow-x: hidden;
 }
 body main .carousel-section .menu .menu-open {
   position: absolute;
@@ -10909,6 +10910,14 @@ body main .about-our-furniture .about-text + .col-12 {
   background-size: cover;
   background-position: center;
   min-height: 200px;
+}
+body .attribution {
+  text-align: center;
+}
+body .attribution a {
+  color: hsl(0deg, 0%, 0%);
+  text-decoration: none;
+  font-weight: 700;
 }
 
 /* ANIMATION MENU */

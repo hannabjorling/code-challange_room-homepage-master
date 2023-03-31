@@ -32,6 +32,7 @@ body {
   font-size: 12px;
   font-family: $ff-body;
   margin: 0;
+  overflow-x: hidden;
 
   main {
     .carousel-section {
@@ -180,6 +181,17 @@ body {
           min-height: 200px;
         }
       }
+    }
+
+  }
+
+  .attribution {
+    text-align: center;
+
+    a {
+      color: $clr-black;
+      text-decoration: none;
+      font-weight: $fw-bold;
     }
   }
 }

@@ -9,6 +9,7 @@ document.querySelector('.open')!.addEventListener('click', () => {
     document.querySelector('body')?.classList.add('hidden-overflow')
 
 })
+
 document.querySelector('.close')!.addEventListener('click', () => {
     document.querySelector('.menu-open')?.classList.replace('flex', 'hide')
     document.querySelector('.menu-closed')?.classList.replace('hide', 'flex')
