@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://profound-khapse-080111.netlify.app/](https://profound-khapse-080111.netlify.app/)
 
 ## My process
 I followed the design images provided by Frontend Mentor and made a few changes. 
@@ -55,5 +55,5 @@ These are things I will continue to practise in my next projects:
 
 ## Author
 
-- Website - [Hanna Björling](https://www.your-site.com)
+- Website - [Hanna Björling](https://hannabjorling.netlify.app/)
 - Frontend Mentor - [@hannabjorling](https://www.frontendmentor.io/profile/hannabjorling)
